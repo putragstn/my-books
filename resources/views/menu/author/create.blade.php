@@ -37,7 +37,7 @@
                                         <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-image"></i></span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" name="filename" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                        <input type="file" name="author_image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                                         <label class="custom-file-label" for="inputGroupFile01">Pilih Gambar</label>
                                     </div>
                                 </div>

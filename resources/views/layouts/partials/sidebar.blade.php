@@ -55,7 +55,7 @@
     {{-- Categories --}}
     <li class="nav-item {{ Request::is('category*') ? 'active' : '' }}">
         <a class="nav-link" href="/category">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-clipboard-list"></i>
             <span>Categories</span></a>
     </li>
 

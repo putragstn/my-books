@@ -22,10 +22,26 @@
                         @csrf
                         @method('post')
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="user_image" class="col-sm-4 col-form-label">User Image</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="user_image" name="user_image" value="user-image.png">
+                            </div>
+                        </div> --}}
+
+                        <div class="form-group row">
+                            <label for="user_image" class="col-sm-4 col-form-label">User Image</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-image"></i></span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="user_image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label" for="inputGroupFile01">Pilih Gambar</label>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Format gambar yang dibolehkan jpeg, png, jpg, gif, svg | Max: 5MB</small>
                             </div>
                         </div>
 

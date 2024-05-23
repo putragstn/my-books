@@ -43,7 +43,6 @@
                                 </div>
                                 <small class="form-text text-muted">Format gambar yang dibolehkan jpeg, png, jpg, gif, svg | Max: 5MB</small>
                             </div>
-                                
                         </div>
 
                         <div class="form-group row">

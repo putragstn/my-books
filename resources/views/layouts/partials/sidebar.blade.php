@@ -48,7 +48,7 @@
     {{-- Authors --}}
     <li class="nav-item {{ Request::is('author*') ? 'active' : '' }}">
     <a class="nav-link" href="/author">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Authors</span></a>
     </li>
 
@@ -70,7 +70,7 @@
         {{-- Users --}}
         <li class="nav-item {{ Request::is('user*') ? 'active' : '' }}">
             <a class="nav-link" href="/user">
-                <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-fw fa-users"></i>
                 <span>User Accounts</span></a>
         </li>
     @endif
@@ -105,7 +105,7 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item {{ Request::is('book*') ? 'active' : '' }}">
         <a class="nav-link" href="/book">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-book"></i>
             <span>My Books</span></a>
     </li>
 

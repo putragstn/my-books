@@ -82,14 +82,37 @@ class AuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         $request->validate([
-            'author_image'  => 'required',
+            'author_image'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename image
             'author_name'   => 'required',
             'date_of_birth' => 'required',
             'country'       => 'required',
             'sex'           => 'required'
         ]);
 
-        $author->update($request->except(['_token']));
+        $input = $request->all();
+
+        // get data by ID
+        $authorById = Author::find($author->id);
+
+        // cek apakah gambar tersedia
+        if (request()->hasFile('author_image')) {
+
+            // jika gambar tersedia, upload gambar baru
+            if ($image = $request->file('author_image')) {
+                $destinationPath = 'img/author-image/';
+                $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $profileImage);
+                $input['author_image'] = "$profileImage";
+            }
+
+            // hapus gambar lama
+            $image_path = public_path('img/author-image/' . $authorById->author_image);
+            unlink($image_path);
+        }
+
+        $authorById->update($input);
+
+        // $author->update($request->except(['_token']));
         return redirect()->route('author.index')->with('success', 'Author updated successfully');
     }
 

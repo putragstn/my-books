@@ -22,13 +22,6 @@
                         @csrf
                         @method('post')
 
-                        {{-- <div class="form-group row">
-                            <label for="author_image" class="col-sm-4 col-form-label">Author Image</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="author_image" name="author_image" value="author-image.png">
-                            </div>
-                        </div> --}}
-
                         {{-- Alert --}}
                         @if ($errors->any())
                             <div class="alert alert-danger">

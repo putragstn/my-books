@@ -18,14 +18,36 @@
                 </div>
                 <div class="card-body">
                     
-                    <form action="{{ route('author.update', $author->id) }}" method="POST">
+                    <form action="{{ route('author.update', $author->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
+                        {{-- Alert Form Validation --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        {{-- End of Alert Form Validation --}}
+
                         <div class="form-group row">
-                            <label for="author_image" class="col-sm-4 col-form-label">Author Image</label>
+                            <label class="col-sm-4 col-form-label">Author Image</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="author_image" name="author_image" value="{{ $author->author_image }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-image"></i></span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" name="author_image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                        <label class="custom-file-label" for="inputGroupFile01">{{ $author->author_image }}</label>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Format gambar yang dibolehkan jpeg, png, jpg, gif, svg | Max: 5MB</small>
                             </div>
                         </div>
 

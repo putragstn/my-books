@@ -58,7 +58,7 @@
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">
-                                    <img src="img/author-image/{{ $author->author_image }}" alt="{{ $author->author_name }}" width="75">
+                                    <img src="img/author-image/{{ $author->author_image }}" alt="{{ $author->author_name }}" width="100">
                                 </td>
                                 <td>{{ $author->author_name }}</td>
                                 <td>{{ $author->date_of_birth }}</td>

@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     
-                    <form action="{{ route('author.store') }}" method="POST">
+                    <form action="{{ route('author.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('post')
 
@@ -29,8 +29,21 @@
                             </div>
                         </div> --}}
 
+                        {{-- Alert --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        {{-- End of Alert --}}
+
                         <div class="form-group row">
-                            <label for="author_image" class="col-sm-4 col-form-label">Author Image</label>
+                            <label class="col-sm-4 col-form-label">Author Image</label>
                             <div class="col-sm-8">
                                 <div class="input-group">
                                     <div class="input-group-prepend">

@@ -34,14 +34,26 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'author_image'  => 'required',
+            'author_image'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename
             'author_name'   => 'required',
             'date_of_birth' => 'required',
             'country'       => 'required',
             'sex'           => 'required'
         ]);
 
-        Author::create($request->all());
+        $input = $request->all();
+
+        // dd($input);
+
+        if ($image = $request->file('author_image')) {
+            $destinationPath = 'img/author-image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['author_image'] = "$profileImage";
+        }
+
+        Author::create($input);
+
         return redirect()->route('author.index')->with('success', 'Author created successfully');
     }
 

@@ -82,7 +82,7 @@ class AuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         $request->validate([
-            'author_image'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename image
+            'author_image'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename image
             'author_name'   => 'required',
             'date_of_birth' => 'required',
             'country'       => 'required',
@@ -121,6 +121,15 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
+        //get post by ID
+        // $gambar = Image::findOrFail($id);
+
+        $image_path = public_path('img/author-image/' . $author->author_image);
+
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+
         $author->delete();
         return redirect()->route('author.index')->with('success', 'Author deleted successfully');
     }

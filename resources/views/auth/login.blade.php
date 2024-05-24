@@ -45,20 +45,18 @@
                         <div class="form-outline mb-4">
                             <input type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Email or Username" name="email"/>
                         </div>
+                        {{-- value="{{ old('email') }}" --}}
             
                         <!-- Password input -->
-                        <div class="form-outline mb-4">
-                            <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" placeholder="Password" name="password"/>
+                        <div class="form-outline mb-2">
+                            <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" placeholder="Password" name="password" id="password"/>
                         </div>
             
-                        {{-- <div class="d-flex justify-content-around align-items-center mb-4">
                             <!-- Checkbox -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                                <label class="form-check-label" for="form1Example3"> Remember me </label>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="checkbox" />
+                                <label class="form-check-label" for="checkbox">Show Password</label>
                             </div>
-                            <a href="#!">Forgot password?</a>
-                        </div> --}}
             
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-lg btn-block col-lg-12">Sign in</button>
@@ -79,6 +77,13 @@
 
     
 
+    {{-- Bootsrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- jQuery --}}
+    <script src="{{ URL::asset('js/jquery.js') }}"></script>
+
+    {{-- Custom JS --}}
+    <script src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>

@@ -34,12 +34,21 @@ class PublisherController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'publisher_image'   => 'required',
+            'publisher_image'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename
             'publisher_name'    => 'required',
             'address'           => 'required'
         ]);
 
-        Publisher::create($request->all());
+        $input = $request->all();
+
+        if ($image = $request->file('publisher_image')) {
+            $destinationPath = 'img/publisher-image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['publisher_image'] = "$profileImage";
+        }
+
+        Publisher::create($input);
         return redirect()->route('publisher.index')->with('success', 'Publisher created successfully');
     }
 
@@ -68,12 +77,35 @@ class PublisherController extends Controller
     public function update(Request $request, Publisher $publisher)
     {
         $request->validate([
-            'publisher_image'   => 'required',
+            'publisher_image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename image
             'publisher_name'    => 'required',
             'address'           => 'required'
         ]);
 
-        $publisher->update($request->except(['_token']));
+        $input = $request->all();
+
+        // get data by ID
+        $publisherById = Publisher::find($publisher->id);
+
+        // cek apakah gambar tersedia
+        if (request()->hasFile('publisher_image')) {
+
+            // jika gambar tersedia, upload gambar baru
+            if ($image = $request->file('publisher_image')) {
+                $destinationPath = 'img/publisher-image/';
+                $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $profileImage);
+                $input['publisher_image'] = "$profileImage";
+            }
+
+            // hapus gambar lama
+            $image_path = public_path('img/publisher-image/' . $publisherById->publisher_image);
+            unlink($image_path);
+        }
+
+        $publisherById->update($input);
+
+        // $publisher->update($request->except(['_token']));
         return redirect()->route('publisher.index')->with('success', 'Publisher updated successfully');
     }
 
@@ -82,6 +114,12 @@ class PublisherController extends Controller
      */
     public function destroy(Publisher $publisher)
     {
+        $image_path = public_path('img/publisher-image/' . $publisher->publisher_image);
+
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+
         $publisher->delete();
         return redirect()->route('publisher.index')->with('success', 'Publisher deleted successfully');
     }

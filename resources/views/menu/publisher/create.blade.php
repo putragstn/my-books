@@ -18,16 +18,22 @@
                 </div>
                 <div class="card-body">
                     
-                    <form action="{{ route('publisher.store') }}" method="POST">
+                    <form action="{{ route('publisher.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('post')
 
-                        {{-- <div class="form-group row">
-                            <label for="publisher_image" class="col-sm-4 col-form-label">Publisher Image</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="publisher_image" name="publisher_image" value="publisher_image.png">
+                        {{-- Alert Form Validation Create --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div> --}}
+                        @endif
+                        {{-- End of Alert Form Validation Create --}}
 
                         <div class="form-group row">
                             <label for="publisher_image" class="col-sm-4 col-form-label">Publisher Image</label>

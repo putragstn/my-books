@@ -53,7 +53,7 @@
                         @foreach ($publishers as $publisher)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center"><img src="img/{{ $publisher->publisher_image }}" alt="{{ $publisher->publisher_name }}" width="100"></td>
+                                <td class="text-center"><img src="img/publisher-image/{{ $publisher->publisher_image }}" alt="{{ $publisher->publisher_name }}" width="100"></td>
                                 <td>{{ $publisher->publisher_name }}</td>
                                 <td>{{ $publisher->address }}</td>
                                 <td class="text-center">

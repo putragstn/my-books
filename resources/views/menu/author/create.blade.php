@@ -22,7 +22,7 @@
                         @csrf
                         @method('post')
 
-                        {{-- Alert --}}
+                        {{-- Alert Form Validation --}}
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <strong>Whoops!</strong> There were some problems with input.<br><br>
@@ -33,7 +33,7 @@
                                 </ul>
                             </div>
                         @endif
-                        {{-- End of Alert --}}
+                        {{-- End of Alert Form Validation --}}
 
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Author Image</label>

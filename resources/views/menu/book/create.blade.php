@@ -18,18 +18,25 @@
                 </div>
                 <div class="card-body">
                     
-                    <form action="{{ route('book.store') }}" method="POST">
+                    <form action="{{ route('book.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('post')
 
-                        <input type="hidden" value="user_id" value="{{ auth()->user()->id }}">
-
-                        {{-- <div class="form-group row">
-                            <label for="book_image" class="col-sm-4 col-form-label">Book Image</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="book_image" name="book_image" value="book-image.png">
+                        {{-- Alert Form Validation --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div> --}}
+                        @endif
+                        {{-- End of Alert Form Validation --}}
+
+                        {{-- Untuk memberikan user_id yang sedang menginput buku --}}
+                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
                         <div class="form-group row">
                             <label for="book_image" class="col-sm-4 col-form-label">Book Image</label>

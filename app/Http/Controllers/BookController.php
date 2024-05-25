@@ -40,7 +40,32 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id'       => 'required',
+            'book_image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',  // filename
+            'book_title'    => 'required',
+            'author_id'     => 'required',
+            'publisher_id'  => 'required',
+            'release_date'  => 'required',
+            'page'          => 'required',
+            'category_id'   => 'required',
+            'status_baca'   => 'required'
+        ]);
+
+        $input = $request->all();
+
+        // dd($input);
+
+        if ($image = $request->file('book_image')) {
+            $destinationPath = 'img/book-image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['book_image'] = "$profileImage";
+        }
+
+        Book::create($input);
+
+        return redirect()->route('book.index')->with('success', 'Book created successfully');
     }
 
     /**

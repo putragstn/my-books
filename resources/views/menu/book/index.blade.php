@@ -64,7 +64,7 @@
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">
-                                    <img src="img/{{ $book->book_image }}" alt="{{ $book->book_image }}" width="75">
+                                    <img src="img/book-image/{{ $book->book_image }}" alt="{{ $book->book_image }}" width="75">
                                 </td>
                                 <td>{{ $book->book_title }}</td>
                                 <td>{{ $book->author_id }}</td>

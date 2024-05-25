@@ -20,7 +20,7 @@
                     
                     <form action="{{ route('book.update', $book->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('post')
+                        @method('put')
 
                         {{-- Alert Form Validation --}}
                         @if ($errors->any())
@@ -66,7 +66,13 @@
                             <div class="col-sm-8">
                                 <select name="author_id" id="author_id" class="form-control">
                                     @foreach ($authors as $author)
-                                        <option value="{{ $author->id }}">{{ $author->author_name }}</option>
+
+                                        {{-- Cari Author_id dari tabel author sampai sesuai dengan author_id punya tabel book --}}
+                                        @if ($author->id === $book->author_id)
+                                            <option value="{{ $author->id }}" selected>{{ $author->author_name }}</option>
+                                        @else
+                                            <option value="{{ $author->id }}">{{ $author->author_name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -77,7 +83,14 @@
                             <div class="col-sm-8">
                                 <select name="publisher_id" id="publisher_id" class="form-control">
                                     @foreach ($publishers as $publisher)
-                                        <option value="{{ $publisher->id }}">{{ $publisher->publisher_name }}</option>
+
+                                        {{-- Jika ada id yang sesuai dengan id yang ada di tabel publisher --}}
+                                        {{-- maka buat dia selected, jika gaada maka jgn di selected --}}
+                                        @if ($publisher->id === $book->publisher_id)
+                                            <option value="{{ $publisher->id }}" selected>{{ $publisher->publisher_name }}</option>    
+                                        @else
+                                            <option value="{{ $publisher->id }}">{{ $publisher->publisher_name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -86,22 +99,33 @@
                         <div class="form-group row">
                             <label for="release_date" class="col-sm-4 col-form-label">Release Date</label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" id="release_date" name="release_date">
+                                <input type="date" class="form-control" id="release_date" name="release_date" value="{{ $book->release_date }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="page" class="col-sm-4 col-form-label">Page</label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="page" name="page">
+                                <input type="number" class="form-control" id="page" name="page" value="{{ $book->page }}">
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label for="category_id" class="col-sm-4 col-form-label">Category</label>
                             <div class="col-sm-8">
                                 <select name="category_id" id="category_id" class="form-control">
+
+                                    
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+
+                                        {{-- Jika ada id yang sesuai dengan id yang ada di tabel publisher --}}
+                                        {{-- maka buat dia selected, jika gaada maka jgn di selected --}}
+                                        @if ($category->id === $book->category_id)
+                                            <option value="{{ $category->id }}" selected>{{ $category->category_name }}</option>    
+                                        @else
+                                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                        @endif
+
                                     @endforeach
                                 </select>
                             </div>
@@ -111,8 +135,16 @@
                             <label for="status_baca" class="col-sm-4 col-form-label">Status Baca</label>
                             <div class="col-sm-8">
                                 <select name="status_baca" id="status_baca" class="form-control">
-                                    <option value="Sudah">Sudah</option>
-                                    <option value="Belum">Belum</option>
+
+                                    {{-- Jika status baca buku adalah true maka selected sudah dibaca --}}
+                                    {{-- Jika status baca buku adalah false maka selected belum dibaca --}}
+                                    @if ($book->status_baca == "sudah")
+                                        <option value="sudah" selected>Sudah</option>
+                                        <option value="belum">Belum</option>
+                                    @else
+                                        <option value="sudah">Sudah</option>
+                                        <option value="belum" selected>Belum</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>

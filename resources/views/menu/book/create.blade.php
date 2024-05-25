@@ -111,8 +111,8 @@
                             <label for="status_baca" class="col-sm-4 col-form-label">Status Baca</label>
                             <div class="col-sm-8">
                                 <select name="status_baca" id="status_baca" class="form-control">
-                                    <option value="Sudah">Sudah</option>
-                                    <option value="Belum">Belum</option>
+                                    <option value="sudah">Sudah</option>
+                                    <option value="belum">Belum</option>
                                 </select>
                             </div>
                         </div>

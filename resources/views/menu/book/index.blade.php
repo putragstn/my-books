@@ -69,7 +69,7 @@
                                 <td>{{ $book->book_title }}</td>
                                 <td>{{ $book->author_id }}</td>
                                 <td>{{ $book->publisher_id }}</td>
-                                <td>{{ $book->release_date }}</td>
+                                <td>{{ date('d-M-Y', strtotime($book->release_date)); }}</td>
                                 <td>{{ $book->page }}</td>
                                 <td>{{ $book->category_id }}</td>
                                 <td>{{ $book->status_baca }}</td>

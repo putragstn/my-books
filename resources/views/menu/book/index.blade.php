@@ -69,11 +69,11 @@
                                 <td>{{ $book->book_title }}</td>
                                 <td>{{ $book->author_id }}</td>
                                 <td>{{ $book->publisher->publisher_name }}</td>
-                                <td>{{ date('d-M-Y', strtotime($book->release_date)); }}</td>
+                                <td>{{ date('d-M-Y', strtotime($book->release_date)) }}</td>
                                 <td>{{ $book->page }}</td>
                                 <td>{{ $book->category_id }}</td>
                                 <td>{{ $book->status_baca }}</td>
-                                <td class="text-center">
+                                <td class="text-center" width="100px">
                                     {{-- Edit Button --}}
                                     <a href="/book/{{ $book->id }}/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
 

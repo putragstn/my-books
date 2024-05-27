@@ -67,11 +67,11 @@
                                     <img src="img/book-image/{{ $book->book_image }}" alt="{{ $book->book_image }}" width="75">
                                 </td>
                                 <td>{{ $book->book_title }}</td>
-                                <td>{{ $book->author_id }}</td>
+                                <td>{{ $book->author->author_name }}</td>
                                 <td>{{ $book->publisher->publisher_name }}</td>
                                 <td>{{ date('d-M-Y', strtotime($book->release_date)) }}</td>
                                 <td>{{ $book->page }}</td>
-                                <td>{{ $book->category_id }}</td>
+                                <td>{{ $book->category->category_name }}</td>
                                 <td>{{ $book->status_baca }}</td>
                                 <td class="text-center" width="100px">
                                     {{-- Edit Button --}}

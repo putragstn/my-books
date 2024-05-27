@@ -61,7 +61,7 @@
                                     <img src="img/author-image/{{ $author->author_image }}" alt="{{ $author->author_name }}" width="100">
                                 </td>
                                 <td>{{ $author->author_name }}</td>
-                                <td>{{ $author->date_of_birth }}</td>
+                                <td>{{ date('d-M-Y', strtotime($author->date_of_birth)) }}</td>
                                 <td>{{ $author->sex }}</td>
                                 <td>{{ $author->country }}</td>
                                 <td class="text-center">

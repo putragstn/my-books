@@ -5,16 +5,16 @@
     @if (auth()->user()->role_id === 1)
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-book"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">My Book <sup>v2</sup></div>
         </a>
     @else
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-book"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Dashboard <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">My Book <sup>v2</sup></div>
         </a>
     @endif
 

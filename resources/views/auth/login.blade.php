@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    {{-- Favicon --}}
+    <link rel="shortcut icon" type="image/jpg" href="icon-open-book.png"/>
+
+    {{-- Bootstap 5 CSS - CDN --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <style>
         .divider:after,

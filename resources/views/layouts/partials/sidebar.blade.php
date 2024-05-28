@@ -62,7 +62,7 @@
     {{-- Publishers --}}
     <li class="nav-item {{ Request::is('publisher*') ? 'active' : '' }}">
         <a class="nav-link" href="/publisher">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-newspaper"></i>
             <span>Publishers</span></a>
     </li>
 

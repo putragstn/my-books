@@ -9,7 +9,7 @@
 
     {{-- Button --}}
     <div class="mb-3">
-        <a href="{{ route('user.create') }}" class="btn btn-primary">Add New User Account</a>
+        <a href="{{ route('user.create') }}" class="btn btn-primary"><i class="fa fa-plus">&nbsp;</i> Add New User Account</a>
     </div>
     {{-- End of Button --}}
 

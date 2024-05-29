@@ -9,7 +9,7 @@
 
     {{-- Button --}}
     <div class="mb-3">
-        <a href="/category/create" class="btn btn-primary">Create New Category</a>
+        <a href="/category/create" class="btn btn-primary"><i class="fa fa-plus">&nbsp;</i> Create New Category</a>
     </div>
     {{-- End of Button --}}
 

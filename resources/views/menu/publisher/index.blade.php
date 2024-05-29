@@ -9,7 +9,7 @@
 
     {{-- Button --}}
     <div class="mb-3">
-        <a href="{{ route('publisher.create') }}" class="btn btn-primary">Add New Publisher</a>
+        <a href="{{ route('publisher.create') }}" class="btn btn-primary"><i class="fa fa-plus">&nbsp;</i> Add New Publisher</a>
     </div>
     {{-- End of Button --}}
 

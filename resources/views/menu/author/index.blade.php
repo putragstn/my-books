@@ -9,7 +9,7 @@
 
     {{-- Button --}}
     <div class="mb-3">
-        <a href="/author/create" class="btn btn-primary">Add New Author</a>
+        <a href="/author/create" class="btn btn-primary"><i class="fa fa-plus">&nbsp;</i> Add New Author</a>
     </div>
     {{-- End of Button --}}
 

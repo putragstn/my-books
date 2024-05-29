@@ -41,7 +41,7 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <div class="sidebar-heading {{ Request::is('author*') || Request::is('category*') || Request::is('publisher*') || Request::is('user*') ? 'text-light' : '' }}">
         Master Data
     </div>
 
@@ -98,7 +98,7 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <div class="sidebar-heading {{ Request::is('book*') ? 'text-light' : '' }}">
         Menu
     </div>
 

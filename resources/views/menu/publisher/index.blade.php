@@ -36,7 +36,7 @@
                             <th>Image</th>
                             <th>Publisher</th>
                             <th>Address</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -45,7 +45,7 @@
                             <th>Image</th>
                             <th>Publisher</th>
                             <th>Address</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </tfoot>
 

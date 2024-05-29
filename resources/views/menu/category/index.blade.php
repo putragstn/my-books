@@ -32,14 +32,14 @@
                         <tr class="text-center">
                             <th>No</th>
                             <th>Category Name</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr class="text-center">
                             <th>No</th>
                             <th>Category Name</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </tfoot>
 

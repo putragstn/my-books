@@ -38,7 +38,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Role User</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -49,7 +49,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Role User</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </tfoot>
 

@@ -38,7 +38,7 @@
                             <th>Date of Birth</th>
                             <th>Sex</th>
                             <th>Country</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -49,7 +49,7 @@
                             <th>Date of Birth</th>
                             <th>Sex</th>
                             <th>Country</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </tfoot>
 

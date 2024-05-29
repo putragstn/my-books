@@ -41,7 +41,7 @@
                             <th>Page</th>
                             <th>Category</th>
                             <th>Status Baca</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -55,7 +55,7 @@
                             <th>Page</th>
                             <th>Category</th>
                             <th>Status Baca</th>
-                            <th>Action</th>
+                            <th><i class="fa fa-cog"></i></th>
                         </tr>
                     </tfoot>
 

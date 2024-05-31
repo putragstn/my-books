@@ -62,7 +62,13 @@
                                 </td>
                                 <td>{{ $author->author_name }}</td>
                                 <td>{{ date('d-M-Y', strtotime($author->date_of_birth)) }}</td>
-                                <td>{{ $author->sex }}</td>
+                                <td class="text-center">
+                                    @if ($author->sex == "Male")
+                                        <i class="fas fa-mars fa-3x text-primary"></i>
+                                    @else
+                                        <i class="fas fa-venus fa-3x text-danger"></i>
+                                    @endif
+                                </td>
                                 <td>{{ $author->country }}</td>
                                 <td class="text-center">
                                     {{-- Edit Button --}}

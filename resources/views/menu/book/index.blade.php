@@ -9,7 +9,7 @@
 
     {{-- Button --}}
     <div class="mb-3">
-        <a href="/book/create" class="btn btn-primary">Add New Book</a>
+        <a href="/book/create" class="btn btn-primary"><i class="fa fa-plus">&nbsp;</i> Add New Book</a>
     </div>
     {{-- End of Button --}}
 

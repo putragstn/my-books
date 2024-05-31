@@ -72,7 +72,13 @@
                                 <td>{{ date('d-M-Y', strtotime($book->release_date)) }}</td>
                                 <td>{{ $book->page }}</td>
                                 <td>{{ $book->category->category_name }}</td>
-                                <td>{{ $book->status_baca }}</td>
+                                <td>
+                                    @if ($book->status_baca == "sudah")
+                                        <span class="badge badge-success">Sudah</span>
+                                    @else
+                                        <span class="badge badge-danger">belum</span>
+                                    @endif
+                                </td>
                                 <td class="text-center" width="100px">
                                     {{-- Edit Button --}}
                                     <a href="/book/{{ $book->id }}/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>

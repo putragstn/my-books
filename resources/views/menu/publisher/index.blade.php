@@ -52,11 +52,11 @@
                     <tbody>
                         @foreach ($publishers as $publisher)
                             <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center" width="">{{ $loop->iteration }}</td>
                                 <td class="text-center"><img src="img/publisher-image/{{ $publisher->publisher_image }}" alt="{{ $publisher->publisher_name }}" width="100"></td>
                                 <td>{{ $publisher->publisher_name }}</td>
-                                <td>{{ $publisher->address }}</td>
-                                <td class="text-center">
+                                <td width="450px">{{ $publisher->address }}</td>
+                                <td class="text-center" width="100px">
                                     {{-- Edit Button --}}
                                     <a href="/publisher/{{ $publisher->id }}/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
 

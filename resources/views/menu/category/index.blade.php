@@ -46,9 +46,9 @@
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center" width="35px">{{ $loop->iteration }}</td>
                                 <td>{{ $category->category_name }}</td>
-                                <td class="text-center">
+                                <td class="text-center" width="75px">
                                     {{-- Edit Button --}}
                                     <a href="/category/{{ $category->id }}/edit" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
 

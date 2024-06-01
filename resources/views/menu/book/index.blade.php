@@ -72,7 +72,7 @@
                                 <td>{{ date('d-M-Y', strtotime($book->release_date)) }}</td>
                                 <td>{{ $book->page }}</td>
                                 <td>{{ $book->category->category_name }}</td>
-                                <td>
+                                <td class="text-center">
                                     @if ($book->status_baca == "sudah")
                                         <span class="badge badge-success">Sudah</span>
                                     @else

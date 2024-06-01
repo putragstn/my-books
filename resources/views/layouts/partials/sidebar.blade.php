@@ -121,7 +121,7 @@
     <div class="sidebar-card d-none d-lg-flex">
         <img class="sidebar-card-illustration mb-2" src="{{ URL::asset('template/sb-admin-2/img/undraw_rocket.svg') }}" alt="...">
         <p class="text-center mb-2">Logged as: <strong>{{ auth()->user()->name }}</strong></p>
-        <p class="text-center mb-2">Role: <strong>{{ auth()->user()->role_id }}</strong></p>
+        <p class="text-center mb-2">Role: <strong>{{ auth()->user()->role->role_name }}</strong></p>
         <a class="btn btn-success btn-sm" href="#">My Profile</a>
     </div>
 

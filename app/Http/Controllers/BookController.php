@@ -15,7 +15,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        // batasi hak akses/kepemilikan buku dengan id_user
+        // batasi hak akses/kepemilikan buku dengan user_id (foreign key)
         if(auth()->user()->role_id != 1){
             // Jika rolenya bukan superadmin, tampilkan berdasarkan user_id aja
             $user_book = Book::where('user_id', auth()->user()->id)->get();

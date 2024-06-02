@@ -15,9 +15,18 @@ class BookController extends Controller
      */
     public function index()
     {
+        // batasi hak akses/kepemilikan buku dengan id_user
+        if(auth()->user()->role_id != 1){
+            // Jika rolenya bukan superadmin, tampilkan berdasarkan user_id aja
+            $user_book = Book::where('user_id', auth()->user()->id)->get();
+        } else {
+            // Jika rolenya superadmin, tampilkan semuanya
+            $user_book = Book::all();
+        }
+
         return view('menu.book.index', [
             'title' => 'Book',
-            'books' => Book::all()
+            'books' => $user_book
         ]);
     }
 

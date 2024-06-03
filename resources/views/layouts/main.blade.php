@@ -42,7 +42,8 @@
             {{-- Main Content --}}
             <div id="content">
 
-                @include('layouts.partials.topbar')
+                {{-- Izin tanya, gimana caranya passing data tapi pake data yg dinamis engga statis ? --}}
+                @include('layouts.partials.topbar', ['book' => 12345])
 
                 {{-- Container --}}
                 <div class="container-fluid">

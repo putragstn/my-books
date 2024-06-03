@@ -10,9 +10,8 @@
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
-
+        {{-- {{ $newBooks }} --}}
         {{-- Tampilkan hanya untuk role superadmin --}}
-
         @if (auth()->user()->role_id === 1)
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">

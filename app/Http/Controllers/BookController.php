@@ -25,8 +25,8 @@ class BookController extends Controller
         }
 
         return view('menu.book.index', [
-            'title' => 'Book',
-            'books' => $user_book
+            'title'     => 'Book',
+            'books'     => $user_book,
         ]);
     }
 
@@ -158,5 +158,11 @@ class BookController extends Controller
 
         $book->delete();
         return redirect()->route('book.index')->with('success', 'Book deleted successfully');
+    }
+
+    public function getBookData(){
+        return view('layouts.partials.topbar', [
+            'newBooks' => Book::all()
+        ]);
     }
 }
